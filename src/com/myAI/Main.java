@@ -24,7 +24,7 @@ public class Main {
         }
 
         //Command Prompt
-        System.out.println("Good " + timeOut + ", would you like to initialize the AI? (Y/N)");
+        System.out.println("Good " + timeOut + " User, would you like to initialize the AI? (Y/N)");
         response = in.nextLine().trim().toLowerCase();
         if (response.startsWith("y")){
             System.out.println("Initializing AI...");
