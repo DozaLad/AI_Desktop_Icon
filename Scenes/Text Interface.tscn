@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://6tfrrrlxqkpa"]
+
+[ext_resource type="Script" uid="uid://odx2exhitmqx" path="res://Scripts/TextInOut.cs" id="1_d08t5"]
+
+[node name="TextInterface" type="Control" node_paths=PackedStringArray("inputTextBox", "outputTextBox")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d08t5")
+inputTextBox = NodePath("VBoxContainer/Input Box")
+outputTextBox = NodePath("Panel/Output Box")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366319
+anchor_top = 0.253086
+anchor_right = 0.607639
+anchor_bottom = 0.66358
+offset_left = -4.0
+offset_top = -10.0
+offset_right = 4.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Input Box" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="Send Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Send"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.357
+anchor_top = 0.715
+anchor_right = 0.61934
+anchor_bottom = 0.94
+offset_left = -0.264038
+offset_top = -0.320007
+offset_right = -0.47998
+offset_bottom = -0.120056
+metadata/_edit_use_anchors_ = true
+
+[node name="Output Box" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/Send Button" to="." method="HandleButtonPress"]
